@@ -72,7 +72,7 @@
 <header>
   <div class="wrap">
     <h1>V-Core — Privacy Policy</h1>
-    <p id="updated">Last updated: 27 October 2026</p>
+    <p id="updated">Last updated: 9 November 2026</p>
     <nav>
       <button id="btn-en" aria-pressed="true" onclick="setLang('en')">English</button>
       <button id="btn-el" aria-pressed="false" onclick="setLang('el')">Ελληνικά</button>
@@ -94,7 +94,8 @@
 
   <h2>2. What we collect</h2>
   <p><strong>We collect nothing.</strong> V-Core has no backend server, no accounts, no login, and no analytics. We do not collect your name, email address, precise location, or device identifiers.</p>
-  <p>Everything you enter or import — workouts, weight, height, age, goals, shoes, notes, photos — is written to your device's local storage and stays there. It is stored in the app's private storage area, which Android protects from other apps. It is not transmitted anywhere.</p>
+  <p>Everything you enter or import — workouts, weight, height, age, goals, shoes, notes, photos — is written to your device's local storage and stays there. It is stored in the app's private storage area, which Android protects from other apps. It is not transmitted anywhere: the app does not have internet access at all.</p>
+  <p>The only exception is a file you create yourself: if you export your training plan as a PDF, a copy is saved in your device's Downloads folder (where other apps, such as a PDF viewer, can open it).</p>
   <p>Android's automatic cloud backup is configured so that no V-Core data is uploaded, so your data is not copied to Google's servers.</p>
 
   <h2>3. Health Connect</h2>
@@ -104,7 +105,7 @@
   <ul>
     <li><strong>Exercise sessions</strong> — to identify each run and its start and end time</li>
     <li><strong>Distance</strong> — to calculate pace and training volume</li>
-    <li><strong>Heart rate</strong> — to show average and maximum heart rate per run</li>
+    <li><strong>Heart rate</strong> — to show average and maximum heart rate per run, and the heart-rate samples recorded during the run to show the time spent in each heart-rate zone</li>
     <li><strong>Steps</strong> — to calculate your average running cadence</li>
     <li><strong>Total calories burned</strong> — to display energy expenditure per run</li>
     <li><strong>Elevation gained</strong> — to show total ascent per run</li>
@@ -138,14 +139,16 @@
   <h2>4. Importing files</h2>
   <p>You can import <strong>.fit</strong> and <strong>.tcx</strong> workout files from your device. These files are read once, on your device, to fill in the workout details. The file itself is not copied, stored, or uploaded.</p>
 
-  <h2>5. Strava (optional)</h2>
-  <p>If you choose to connect a Strava account, V-Core uses Strava's official authorisation flow to import your activities. Your Strava login credentials are never seen or stored by V-Core; only an access token is stored on your device, and you can disconnect at any time. Imported activities are stored locally like any other workout. Strava's own privacy policy governs their handling of your data.</p>
+  <h2>5. No Strava connection</h2>
+  <p>V-Core no longer connects to Strava or to any other online service, and it stores no Strava access token. To bring in an activity recorded on Strava, export the original .fit or .tcx file from Strava and import it as described in section 4.</p>
 
   <h2>6. Permissions we request</h2>
   <ul>
     <li><strong>Health Connect</strong> — as described in section 3, and only with your consent.</li>
     <li><strong>Files</strong> — through Android's system file picker, so you can import workout files and save or restore your own backup. V-Core only accesses the file you choose.</li>
     <li><strong>Photos</strong> — only if you choose to attach a photo to a workout. Photos are saved on your device.</li>
+    <li><strong>Background work</strong> — if you allow background sync, Android's WorkManager runs the Health Connect sync on your device, keeps it running briefly, and restores the schedule after a restart. None of this uses the network.</li>
+    <li><strong>Storage</strong> (Android 12 and older only) — to read the files you choose and, on Android 9 and older, to save files such as the training-plan PDF.</li>
   </ul>
 
   <h2>7. Backups and export</h2>
@@ -157,7 +160,6 @@
     <li>Nothing is uploaded to Google's cloud backup. V-Core's cloud backup rule excludes all app data.</li>
     <li>Your data never passes through us; there is no server or account.</li>
     <li>Health Connect access is not transferred. You grant it again on your new phone.</li>
-    <li>Your Strava connection, if you have one, is not transferred.</li>
     <li>On Android 11 or earlier, nothing is transferred automatically. Use the manual backup (section 7) instead.</li>
     <li>The manual backup (JSON file) stays wherever you save it.</li>
   </ul>
@@ -194,7 +196,8 @@
 
   <h2>2. Τι συλλέγουμε</h2>
   <p><strong>Δεν συλλέγουμε τίποτα.</strong> Το V-Core δεν έχει διακομιστή, δεν έχει λογαριασμούς, δεν έχει σύνδεση χρήστη και δεν χρησιμοποιεί analytics. Δεν συλλέγουμε το όνομά σας, το email σας, την ακριβή τοποθεσία σας ή αναγνωριστικά συσκευής.</p>
-  <p>Οτιδήποτε καταχωρείτε ή εισάγετε — προπονήσεις, βάρος, ύψος, ηλικία, στόχοι, παπούτσια, σημειώσεις, φωτογραφίες — αποθηκεύεται τοπικά στη συσκευή σας και παραμένει εκεί. Βρίσκεται στον ιδιωτικό χώρο αποθήκευσης της εφαρμογής, τον οποίο το Android προστατεύει από άλλες εφαρμογές. Δεν μεταδίδεται πουθενά.</p>
+  <p>Οτιδήποτε καταχωρείτε ή εισάγετε — προπονήσεις, βάρος, ύψος, ηλικία, στόχοι, παπούτσια, σημειώσεις, φωτογραφίες — αποθηκεύεται τοπικά στη συσκευή σας και παραμένει εκεί. Βρίσκεται στον ιδιωτικό χώρο αποθήκευσης της εφαρμογής, τον οποίο το Android προστατεύει από άλλες εφαρμογές. Δεν μεταδίδεται πουθενά: η εφαρμογή δεν έχει καθόλου πρόσβαση στο Internet.</p>
+  <p>Η μόνη εξαίρεση είναι ένα αρχείο που δημιουργείτε εσείς: αν εξαγάγετε το πρόγραμμα προπόνησης ως PDF, ένα αντίγραφο αποθηκεύεται στον φάκελο «Λήψεις» της συσκευής σας (όπου μπορούν να το ανοίξουν άλλες εφαρμογές, όπως ένα πρόγραμμα ανάγνωσης PDF).</p>
   <p>Η αυτόματη δημιουργία αντιγράφων ασφαλείας του Android στο cloud είναι ρυθμισμένη ώστε να μην ανεβαίνει κανένα δεδομένο του V-Core, οπότε τα δεδομένα σας δεν αντιγράφονται στους διακομιστές της Google.</p>
 
   <h2>3. Health Connect</h2>
@@ -204,7 +207,7 @@
   <ul>
     <li><strong>Συνεδρίες άσκησης</strong> — για την αναγνώριση κάθε τρεξίματος και της διάρκειάς του</li>
     <li><strong>Απόσταση</strong> — για τον υπολογισμό ρυθμού και όγκου προπόνησης</li>
-    <li><strong>Καρδιακοί παλμοί</strong> — για την εμφάνιση μέσων και μέγιστων παλμών ανά τρέξιμο</li>
+    <li><strong>Καρδιακοί παλμοί</strong> — για την εμφάνιση μέσων και μέγιστων παλμών ανά τρέξιμο, και τα δείγματα παλμών κατά τη διάρκειά του για τον χρόνο σε κάθε ζώνη καρδιακής συχνότητας</li>
     <li><strong>Βήματα</strong> — για τον υπολογισμό της μέσης συχνότητας βηματισμού (cadence)</li>
     <li><strong>Συνολικές θερμίδες</strong> — για την εμφάνιση ενεργειακής δαπάνης ανά τρέξιμο</li>
     <li><strong>Υψομετρική διαφορά</strong> — για την εμφάνιση της συνολικής ανάβασης</li>
@@ -238,14 +241,16 @@
   <h2>4. Εισαγωγή αρχείων</h2>
   <p>Μπορείτε να εισάγετε αρχεία προπόνησης <strong>.fit</strong> και <strong>.tcx</strong> από τη συσκευή σας. Τα αρχεία διαβάζονται μία φορά, τοπικά, για να συμπληρωθούν τα στοιχεία της προπόνησης. Το ίδιο το αρχείο δεν αντιγράφεται, δεν αποθηκεύεται και δεν ανεβαίνει πουθενά.</p>
 
-  <h2>5. Strava (προαιρετικό)</h2>
-  <p>Αν επιλέξετε να συνδέσετε λογαριασμό Strava, το V-Core χρησιμοποιεί την επίσημη διαδικασία εξουσιοδότησης του Strava για την εισαγωγή των δραστηριοτήτων σας. Τα διαπιστευτήρια σύνδεσής σας στο Strava δεν τα βλέπει ούτε τα αποθηκεύει ποτέ το V-Core· αποθηκεύεται μόνο ένα token πρόσβασης στη συσκευή σας, και μπορείτε να αποσυνδεθείτε όποτε θέλετε. Οι δραστηριότητες που εισάγονται αποθηκεύονται τοπικά, όπως κάθε άλλη προπόνηση. Η διαχείριση των δεδομένων σας από το Strava διέπεται από τη δική τους πολιτική απορρήτου.</p>
+  <h2>5. Χωρίς σύνδεση με το Strava</h2>
+  <p>Το V-Core δεν συνδέεται πια με το Strava ούτε με άλλη online υπηρεσία, και δεν αποθηκεύει κανένα token πρόσβασης του Strava. Για μια δραστηριότητα που καταγράψατε στο Strava, εξαγάγετε το πρωτότυπο αρχείο .fit ή .tcx από το Strava και εισαγάγετέ το όπως περιγράφεται στην ενότητα 4.</p>
 
   <h2>6. Άδειες που ζητάμε</h2>
   <ul>
     <li><strong>Health Connect</strong> — όπως περιγράφεται στην ενότητα 3, και μόνο με τη συγκατάθεσή σας.</li>
     <li><strong>Αρχεία</strong> — μέσω του επιλογέα αρχείων του Android, για να μπορείτε να εισάγετε αρχεία προπόνησης και να αποθηκεύετε ή να επαναφέρετε το δικό σας αντίγραφο ασφαλείας. Το V-Core έχει πρόσβαση μόνο στο αρχείο που επιλέγετε.</li>
     <li><strong>Φωτογραφίες</strong> — μόνο αν επιλέξετε να επισυνάψετε φωτογραφία σε μια προπόνηση. Οι φωτογραφίες αποθηκεύονται στη συσκευή σας.</li>
+    <li><strong>Εργασίες παρασκηνίου</strong> — αν επιτρέψετε τον συγχρονισμό στο παρασκήνιο, το WorkManager του Android εκτελεί τον συγχρονισμό με το Health Connect στη συσκευή σας, τον κρατά ενεργό για λίγο και επαναφέρει το πρόγραμμά του μετά από επανεκκίνηση. Τίποτα από αυτά δεν χρησιμοποιεί δίκτυο.</li>
+    <li><strong>Αποθηκευτικός χώρος</strong> (μόνο Android 12 και παλαιότερα) — για την ανάγνωση των αρχείων που επιλέγετε και, σε Android 9 και παλαιότερα, για την αποθήκευση αρχείων όπως το PDF του προγράμματος.</li>
   </ul>
 
   <h2>7. Αντίγραφα ασφαλείας</h2>
@@ -257,7 +262,6 @@
     <li>Τίποτα δεν ανεβαίνει στο cloud backup της Google. Ο κανόνας cloud backup του V-Core εξαιρεί όλα τα δεδομένα της εφαρμογής.</li>
     <li>Τα δεδομένα δεν περνούν από εμάς· δεν υπάρχει διακομιστής ή λογαριασμός.</li>
     <li>Η άδεια του Health Connect δεν μεταφέρεται. Τη δίνετε ξανά στο νέο κινητό.</li>
-    <li>Η σύνδεση με το Strava, αν υπάρχει, δεν μεταφέρεται.</li>
     <li>Σε Android 11 ή παλαιότερο δεν μεταφέρεται τίποτα αυτόματα. Χρησιμοποιήστε το χειροκίνητο αντίγραφο ασφαλείας (ενότητα 7).</li>
     <li>Το χειροκίνητο αντίγραφο ασφαλείας (αρχείο JSON) μένει όπου το αποθηκεύσετε.</li>
   </ul>
@@ -296,7 +300,7 @@ function setLang(l){
   document.getElementById('btn-el').setAttribute('aria-pressed', l === 'el');
   document.documentElement.lang = l;
   document.getElementById('updated').textContent =
-    (l === 'el') ? 'Τελευταία ενημέρωση: 27 Οκτωβρίου 2026' : 'Last updated: 27 October 2026';
+    (l === 'el') ? 'Τελευταία ενημέρωση: 9 Νοεμβρίου 2026' : 'Last updated: 9 November 2026';
 }
 if ((navigator.language || '').toLowerCase().startsWith('el')) setLang('el');
 </script>
